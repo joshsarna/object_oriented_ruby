@@ -1,14 +1,14 @@
 class Book
 
+  attr_reader :title, :author, :length
+  attr_accessor :price
+
   def initialize(title, author, length, price)
     @title = title
     @author = author
     @length = length
     @price = price
   end
-
-  attr_reader :title, :author, :length, :price
-  attr_writer :price
 
   def print_info
     p "'#{@title}' is a book by #{@author} that has #{@length} pages and costs $#{price}."
