@@ -3,11 +3,11 @@ class Book
   attr_reader :title, :author, :length
   attr_accessor :price
 
-  def initialize(title, author, length, price)
-    @title = title
-    @author = author
-    @length = length
-    @price = price
+  def initialize(input_options)
+    @title = input_options[:title]
+    @author = input_options[:author]
+    @length = input_options[:length]
+    @price = input_options[:price]
   end
 
   def print_info
@@ -16,7 +16,7 @@ class Book
 
 end
 
-purchased_item = Book.new("The Andromeda Strain", "Michael Crichton", 285, 7.99)
+purchased_item = Book.new(title: "The Andromeda Strain", author: "Michael Crichton", length: 285, price: 7.99)
 p purchased_item
 
 p purchased_item.title
