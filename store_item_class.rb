@@ -7,25 +7,8 @@ class Book
     @price = price
   end
 
-  def title
-    @title
-  end
-
-  def author
-    @author
-  end
-
-  def length
-    @length
-  end
-
-  def price
-    @price
-  end
-
-  def price=(new_price)
-    @price = new_price
-  end
+  attr_reader :title, :author, :length, :price
+  attr_writer :price
 
   def print_info
     p "'#{@title}' is a book by #{@author} that has #{@length} pages and costs $#{price}."
