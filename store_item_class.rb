@@ -16,14 +16,22 @@ class Book
 
 end
 
-purchased_item = Book.new(title: "The Andromeda Strain", author: "Michael Crichton", length: 285, price: 7.99)
-p purchased_item
+purchased_item1 = Book.new(title: "The Andromeda Strain", author: "Michael Crichton", length: 285, price: 7.99)
+purchased_item2 = Book.new({:title => "fun book", :author => "person", :length => 10000, :price => 0})
 
-p purchased_item.title
-p purchased_item.author
-p purchased_item.length
-p purchased_item.price
-purchased_item.price = 8.99
-p purchased_item.price
+p purchased_item1.title
+p purchased_item1.author
+p purchased_item1.length
+p purchased_item1.price
+purchased_item1.price = 8.99
+p purchased_item1.price
+purchased_item1.print_info
 
-purchased_item.print_info
+p purchased_item2.title
+p purchased_item2.author
+p purchased_item2.length
+p purchased_item2.price
+purchased_item2.price = 8.99
+p purchased_item2.price
+
+purchased_item2.print_info
