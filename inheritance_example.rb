@@ -2,7 +2,7 @@ class Vehicle
 
   attr_reader :speed
 
-  def initialize(input_options)
+  def initialize(_input_options)
     @speed = 0
     @direction = 'north'
   end
