@@ -16,6 +16,17 @@ class Book
 
 end
 
+class Used_Book < Book
+  
+  attr_reader :condition
+
+  def initialize(input_options)
+    super
+    @condition = input_options[:condition]
+  end
+
+end
+
 purchased_item1 = Book.new(title: "The Andromeda Strain", author: "Michael Crichton", length: 285, price: 7.99)
 purchased_item2 = Book.new({:title => "fun book", :author => "person", :length => 10000, :price => 0})
 
