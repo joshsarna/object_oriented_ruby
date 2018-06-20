@@ -33,12 +33,19 @@ class Bike
 
   include Moveable
 
+  def initialize(input_options)
+    super()
+    @gear_speed = input_options[:gear_speed]
+    @type = input_options[:type]
+    @weight= input_options[:weight]
+  end
+
   def ring_bell
     puts "Ring ring!"
   end
 end
 
-bike1 = Bike.new
+bike1 = Bike.new(gear_speed: 7, type: "Schwinn", weight: 20)
 car1 = Car.new
 
 p bike1.speed
@@ -52,3 +59,5 @@ puts "----"
 
 bike1.ring_bell
 car1.honk_horn
+
+p bike1
