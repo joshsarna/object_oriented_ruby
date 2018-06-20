@@ -16,7 +16,7 @@ class Book
 
 end
 
-class Used_Book < Book
+class UsedBook < Book
   
   attr_reader :condition
 
@@ -28,7 +28,7 @@ class Used_Book < Book
 end
 
 purchased_item1 = Book.new(title: "The Andromeda Strain", author: "Michael Crichton", length: 285, price: 7.99)
-purchased_item2 = Book.new({:title => "fun book", :author => "person", :length => 10000, :price => 0})
+purchased_item2 = UsedBook.new({:title => "fun book", :author => "person", :length => 10000, :price => 0, :condition => "good"})
 
 p purchased_item1.title
 p purchased_item1.author
@@ -42,6 +42,7 @@ p purchased_item2.title
 p purchased_item2.author
 p purchased_item2.length
 p purchased_item2.price
+p purchased_item2.condition
 purchased_item2.price = 8.99
 p purchased_item2.price
 
