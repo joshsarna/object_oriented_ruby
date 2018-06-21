@@ -6,9 +6,24 @@
 # 6. CHALLENGE: Change the interface with better prompts, ASCII art, etc. Be as creative as you'd like!
 
 class Card
+attr_reader :question, :answer
+
+  def initialize(question, answer)
+    @question = question
+    @answer = answer
+  end
 end
 
 class Deck
+  def initialize(questions_and_answers)
+    @card1 = Card.new(trivia_data,trivia_data)
+  end
+
+  def draw_card
+
+  end
+
+  def remaining_cards
 end
 
 trivia_data = {

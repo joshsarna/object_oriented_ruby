@@ -1,4 +1,4 @@
-module Moveable
+module Movable
   def initialize
     @speed = 0
     @direction = 'north'
@@ -22,7 +22,7 @@ module Moveable
 end
 
 class Car
-  include Moveable
+  include Movable
 
   def honk_horn
     puts "Beeeeeeep!"
@@ -30,8 +30,7 @@ class Car
 end
 
 class Bike
-
-  include Moveable
+  include Movable
 
   def initialize(input_options)
     super()
