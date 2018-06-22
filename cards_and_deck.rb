@@ -16,14 +16,20 @@ end
 
 class Deck
   def initialize(questions_and_answers)
-    @card1 = Card.new(trivia_data,trivia_data)
+    questions = questions_and_answers.keys
+    @cards = []
+    questions.each do |key|
+      @cards << Card.new(key, questions_and_answers[key])
+    end
   end
 
   def draw_card
-
+    @cards.pop
   end
 
   def remaining_cards
+    @cards.length
+  end
 end
 
 trivia_data = {
@@ -34,13 +40,37 @@ trivia_data = {
 
 deck = Deck.new(trivia_data) # deck is an instance of the Deck class
 
+@correct_answers = 0
+@half_correct_answers = 0
+
 while deck.remaining_cards > 0
   card = deck.draw_card # card is an instance of the Card class
   puts card.question
   user_answer = gets.chomp
   if user_answer.downcase == card.answer.downcase
     puts "Correct!"
+    @correct_answers += 1
   else
-    puts "Incorrect!"
+    puts "Incorrect! Try again."
+    puts card.question
+    user_answer = gets.chomp
+    if user_answer.downcase == card.answer.downcase
+      puts "Correct!"
+      @half_correct_answers += 1
+    else
+      puts "Incorrect!"
+    end
   end
+end
+
+if @correct_answers > 1 or @correct_answers == 0
+  puts "You got #{@correct_answers} questions correct on your first try."
+else
+  puts "You got #{@correct_answers} question correct on your first try."
+end
+
+if @half_correct_answers > 1
+  puts "You got #{@half_correct_answers} questions correct on your second try."
+elsif @half_correct_answers > 0
+  puts "You got #{@half_correct_answers} question correct on your second try."
 end
